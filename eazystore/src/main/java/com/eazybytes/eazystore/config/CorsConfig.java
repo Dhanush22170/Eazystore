@@ -5,17 +5,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class CorsConfig {
-
     @Bean
     public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")
-                        .allowedOrigins("https://eazystore-git-main-dhanush22170s-projects.vercel.app")
-                        .allowedMethods("*")
-                        .allowedHeaders("*");
-            }
-        };
+        return registry -> registry.addMapping("/**")
+                .allowedOrigins("*") // temp
+                .allowedMethods("*")
+                .allowedHeaders("*");
     }
 }
