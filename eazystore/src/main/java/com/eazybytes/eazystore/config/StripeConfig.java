@@ -7,9 +7,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
+@PropertySource("classpath:stripe.properties")
 public class StripeConfig {
 
-    @Value("${STRIPE_SECRET_KEY}")
+    @Value("${stripe.apiKey}")
     private String apiKey;
 
     @PostConstruct
